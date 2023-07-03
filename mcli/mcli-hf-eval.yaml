@@ -8,7 +8,7 @@ integrations:
 - integration_type: wandb
   project: model-gauntlet-v0
   entity: mosaic-ml
-  
+
 command: |
   cd llm-foundry/scripts
   composer eval/eval.py /mnt/config/parameters.yaml
@@ -30,48 +30,48 @@ parameters:
   precision: amp_fp16
 
   models:
-  -
-    model_name: mosaicml/mpt-7b-chat-v2
-    # Tokenizer
-    tokenizer:
-      name: mosaicml/mpt-7b-chat-v2
-      kwargs:
-        model_max_length: ${max_seq_len}
+  # -
+  #   model_name: mosaicml/mpt-7b-chat-v2
+  #   # Tokenizer
+  #   tokenizer:
+  #     name: mosaicml/mpt-7b-chat-v2
+  #     kwargs:
+  #       model_max_length: ${max_seq_len}
 
-    model:
-      name: hf_causal_lm
-      pretrained_model_name_or_path: mosaicml/mpt-7b-chat-v2
-      init_device: cpu
-      pretrained: true
-      use_auth_token: true
-  -
-    model_name: mosaicml/mpt-7b-8k-500b-chat
-    # Tokenizer
-    tokenizer:
-      name: mosaicml/mpt-7b-8k-500b-chat
-      kwargs:
-        model_max_length: ${max_seq_len}
+  #   model:
+  #     name: hf_causal_lm
+  #     pretrained_model_name_or_path: mosaicml/mpt-7b-chat-v2
+  #     init_device: cpu
+  #     pretrained: true
+  #     use_auth_token: true
+  # -
+  #   model_name: mosaicml/mpt-7b-8k-500b-chat
+  #   # Tokenizer
+  #   tokenizer:
+  #     name: mosaicml/mpt-7b-8k-500b-chat
+  #     kwargs:
+  #       model_max_length: ${max_seq_len}
 
-    model:
-      name: hf_causal_lm
-      pretrained_model_name_or_path: mosaicml/mpt-7b-8k-500b-chat
-      init_device: cpu
-      pretrained: true
-      use_auth_token: true
-  -
-    model_name: mosaicml/mpt-7b
-    # Tokenizer
-    tokenizer:
-      name: mosaicml/mpt-7b
-      kwargs:
-        model_max_length: ${max_seq_len}
+  #   model:
+  #     name: hf_causal_lm
+  #     pretrained_model_name_or_path: mosaicml/mpt-7b-8k-500b-chat
+  #     init_device: cpu
+  #     pretrained: true
+  #     use_auth_token: true
+  # -
+  #   model_name: mosaicml/mpt-7b
+  #   # Tokenizer
+  #   tokenizer:
+  #     name: mosaicml/mpt-7b
+  #     kwargs:
+  #       model_max_length: ${max_seq_len}
 
-    model:
-      name: hf_causal_lm
-      pretrained_model_name_or_path: mosaicml/mpt-7b
-      init_device: cpu
-      pretrained: true
-      use_auth_token: false
+  #   model:
+  #     name: hf_causal_lm
+  #     pretrained_model_name_or_path: mosaicml/mpt-7b
+  #     init_device: cpu
+  #     pretrained: true
+  #     use_auth_token: false
   -
     model_name: mosaicml/mpt-7b-storywriter
     # Tokenizer
