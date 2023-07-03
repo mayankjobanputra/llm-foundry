@@ -39,10 +39,11 @@ def load_model(model_cfg, tokenizer, num_retries):
 
 
 def evaluate_model(model_cfg, run_name, model_gauntlet_df):
+    
     print(f'Evaluating model: {model_cfg.model_name}', flush=True)
     # Build tokenizer and model
     tokenizer = build_tokenizer(model_cfg.tokenizer)
-
+    breakpoint()
     evaluators, logger_keys = build_icl_evaluators(cfg.icl_tasks, tokenizer,
                                                    cfg.max_seq_len,
                                                    cfg.device_eval_batch_size)
