@@ -24,12 +24,20 @@ def load_jsonl(input_path, quiet=False) -> list:
     return data
 
 
-def json_iterator(input_dir, text_key="text"):
-    all_jsonls = glob(f"{input_dir}/*.jsonl")
-    for j in all_jsonls:
-        data = load_jsonl(j)
-        for doc in data:
-            yield doc[text_key]
+def json_iterator(input_dir, text_key="text", train_only=True):
+    if train_only:
+        all_jsonls = glob(f"{input_dir}/train.jsonl")
+        for j in all_jsonls:
+            fp = open(j, "rb")
+            with jsonlines.Reader(fp) as reader:
+                for line in reader:
+                    yield line[text_key]
+    else:
+        all_jsonls = glob(f"{input_dir}/*.jsonl")
+        for j in all_jsonls:
+            data = load_jsonl(j)
+            for doc in data:
+                yield doc[text_key]
 
 
 def train_tokenizer(
