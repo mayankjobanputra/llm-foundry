@@ -108,11 +108,11 @@ oscar_en_constants.splits['train_small'] = DataSplitConstants(hf_split='train',
                                                               folder_split='train_small',
                                                               raw_samples=10000,
                                                               truncated_samples=10000)
-oscar_en_constants.splits['val'] = DataSplitConstants(hf_split='validation',
+oscar_en_constants.splits['val'] = DataSplitConstants(hf_split='val',
                                                       folder_split='val',
                                                       raw_samples=30000,
                                                       truncated_samples=None)
-oscar_en_constants.splits['val_small'] = DataSplitConstants(hf_split='validation',
+oscar_en_constants.splits['val_small'] = DataSplitConstants(hf_split='val',
                                                             folder_split='val_small',
                                                             raw_samples=3000,
                                                             truncated_samples=3000)
@@ -129,11 +129,11 @@ oscar_en_constants.splits['train_small'] = DataSplitConstants(hf_split='train',
                                                               folder_split='train_small',
                                                               raw_samples=10000,
                                                               truncated_samples=10000)
-oscar_en_constants.splits['val'] = DataSplitConstants(hf_split='validation',
+oscar_en_constants.splits['val'] = DataSplitConstants(hf_split='val',
                                                       folder_split='val',
                                                       raw_samples=30000,
                                                       truncated_samples=None)
-oscar_en_constants.splits['val_small'] = DataSplitConstants(hf_split='validation',
+oscar_en_constants.splits['val_small'] = DataSplitConstants(hf_split='val',
                                                             folder_split='val_small',
                                                             raw_samples=3000,
                                                             truncated_samples=3000)
