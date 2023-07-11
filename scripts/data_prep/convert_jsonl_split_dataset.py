@@ -118,7 +118,7 @@ oscar_en_constants.splits['val_small'] = DataSplitConstants(hf_split='validation
                                                             truncated_samples=3000)
 
 oscar_de_constants = DatasetConstants(
-    chars_per_sample=7504,  # Computed over validation set
+    chars_per_sample=438429,  # Computed over validation set
     chars_per_token=4  # OpenAI estimate
 )
 oscar_de_constants.splits['train'] = DataSplitConstants(hf_split='train',
