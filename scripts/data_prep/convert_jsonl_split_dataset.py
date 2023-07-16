@@ -284,7 +284,7 @@ def main(args: Namespace) -> None:
         tokenizer = None
         columns = {'text': 'str'}
 
-    for split_name in ["train", "val"]:
+    for split_name in args.splits:
         try:
             split = dataset_constants.splits[split_name]
         except KeyError:

@@ -18,6 +18,7 @@ from composer.optim.scheduler import (ConstantWithWarmupScheduler,
 from composer.utils import dist
 from omegaconf import DictConfig
 from omegaconf import OmegaConf as om
+from tokenizers import Tokenizer as T
 from transformers import (AutoTokenizer, PreTrainedTokenizer,
                           PreTrainedTokenizerFast)
 
@@ -138,8 +139,13 @@ def build_tokenizer(om_tokenizer_config: DictConfig,) -> Tokenizer:
     tokenizer_kwargs = resolved_om_tokenizer_config.get(  # type: ignore
         'kwargs', {})
     tokenizer_name = resolved_om_tokenizer_config['name']  # type: ignore
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_name,
-                                              **tokenizer_kwargs)
+    if ".json" in tokenizer_name:
+        print(f'Loading tokenizer from {tokenizer_name}')
+        t = T.from_file(tokenizer_name)
+        tokenizer = PreTrainedTokenizerFast(tokenizer_object=t)
+    else:
+        tokenizer = AutoTokenizer.from_pretrained(tokenizer_name,
+                                                  **tokenizer_kwargs)
 
     # HuggingFace does not respect the model_max_length kwarg, and overrides it with
     # min(kwargs['model_max_length'], original_config['model_max_length']), so we

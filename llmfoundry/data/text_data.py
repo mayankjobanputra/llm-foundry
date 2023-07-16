@@ -300,7 +300,7 @@ if __name__ == '__main__':
                         help='which split of the dataset to use')
     parser.add_argument('--max_seq_len',
                         type=int,
-                        default=32,
+                        default=2048,
                         help='max sequence length to test')
 
     args = parser.parse_args()
@@ -320,7 +320,7 @@ if __name__ == '__main__':
             'split': args.split,
             'shuffle': False,
             'max_seq_len': args.max_seq_len,
-            'keep_zip': True,  # in case we need compressed files after testing
+            'keep_zip': False,  # in case we need compressed files after testing
         },
         'drop_last': False,
         'num_workers': 4,
