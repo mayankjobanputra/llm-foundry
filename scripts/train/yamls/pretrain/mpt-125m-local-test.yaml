@@ -1,5 +1,5 @@
-data_local: ./oscar_en_small_mds
-data_remote: # If blank, files must be present in data_local
+data_local: /tmp/oscar_en_small_mds_loader
+data_remote: ./oscar_en_small_mds
 max_seq_len: 2048
 global_seed: 17
 

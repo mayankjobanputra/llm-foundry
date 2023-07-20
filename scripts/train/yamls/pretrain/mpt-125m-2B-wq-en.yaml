@@ -1,7 +1,7 @@
-data_local: /mnt/lustre/meurers/mjobanputra60/oscar_en_mds
-data_remote: # If blank, files must be present in data_local
+data_local: /mnt/lustre/meurers/mjobanputra60/oscar_en_mds_loader
+data_remote: /mnt/lustre/meurers/mjobanputra60/oscar_en_mds
 max_seq_len: 2048
-global_seed: 17
+global_seed: 5
 
 # Run Name
 run_name: mpt-108m-2B-wq-en # If left blank, will be read from env var $RUN_NAME
@@ -35,6 +35,7 @@ train_loader:
     shuffle: true
     max_seq_len: ${max_seq_len}
     shuffle_seed: ${global_seed}
+    keep_zip: false
   drop_last: true
   num_workers: 8
 
@@ -47,6 +48,7 @@ eval_loader:
     shuffle: false
     max_seq_len: ${max_seq_len}
     shuffle_seed: ${global_seed}
+    keep_zip: false
   drop_last: false
   num_workers: 8
 
@@ -78,9 +80,9 @@ global_train_batch_size: 256
 
 # System
 seed: ${global_seed}
-device_eval_batch_size: 16
-device_train_microbatch_size: 16
-# device_train_microbatch_size: auto
+device_eval_batch_size: 32
+# device_train_microbatch_size: 16
+device_train_microbatch_size: auto
 precision: amp_bf16
 
 # FSDP
@@ -113,7 +115,7 @@ loggers:
 
 # Checkpoint to local filesystem or remote object store
 save_interval: 500ba
-save_num_checkpoints_to_keep: 4  # Important, this cleans up checkpoints saved to DISK
+save_num_checkpoints_to_keep: 8  # Important, this cleans up checkpoints saved to DISK
 save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
