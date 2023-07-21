@@ -61,12 +61,12 @@ scheduler:
 
 optimizer:
   name: decoupled_adamw
-  lr: 3.0e-4
+  lr: 1.0e-4
   betas:
   - 0.9
   - 0.95
   eps: 1.0e-08
-  weight_decay: 0.1
+  weight_decay: 0.0
 
 algorithms:
   gradient_clipping:
