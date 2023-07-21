@@ -17,7 +17,7 @@ model:
   max_seq_len: ${max_seq_len}
   vocab_size: 20000
   attn_config:
-    attn_impl: torch
+    attn_impl: triton
     alibi: true
 
 # Tokenizer
