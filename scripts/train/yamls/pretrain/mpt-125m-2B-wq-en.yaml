@@ -1,7 +1,7 @@
 data_local: /mnt/lustre/meurers/mjobanputra60/oscar_en_mds_loader
 data_remote: /mnt/lustre/meurers/mjobanputra60/oscar_en_mds
 max_seq_len: 2048
-global_seed: 5
+global_seed: 17
 
 # Run Name
 run_name: mpt-108m-2B-wq-en-flash # If left blank, will be read from env var $RUN_NAME
@@ -55,7 +55,7 @@ eval_loader:
 
 # Optimization
 scheduler:
-  name: cosine_with_warmup
+  name: linear_decay_with_warmup
   t_warmup: 2000ba
   alpha_f: 0.1
 
