@@ -4,7 +4,7 @@ max_seq_len: 2048
 global_seed: 5
 
 # Run Name
-run_name: mpt-108m-2B-wq-en # If left blank, will be read from env var $RUN_NAME
+run_name: mpt-108m-2B-wq-en-torch # If left blank, will be read from env var $RUN_NAME
 
 # Model
 model:
@@ -17,7 +17,7 @@ model:
   max_seq_len: ${max_seq_len}
   vocab_size: 20000
   attn_config:
-    attn_impl: triton
+    attn_impl: torch
 
 # Tokenizer
 tokenizer:
