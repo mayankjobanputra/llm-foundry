@@ -321,6 +321,7 @@ if __name__ == '__main__':
             'shuffle': False,
             'max_seq_len': args.max_seq_len,
             'keep_zip': False,  # in case we need compressed files after testing
+            'cache_limit': "80mb"
         },
         'drop_last': False,
         'num_workers': 4,
@@ -335,7 +336,7 @@ if __name__ == '__main__':
 
     loader = build_text_dataloader(cfg, tokenizer, device_batch_size)
     tokenizer = loader.dataset.tokenizer  # type: ignore
-    for batch_ix, batch in enumerate(islice(loader, 5)):
+    for batch_ix, batch in enumerate(islice(loader, 20)):
         print('\n')
         print('#' * 20, f'Batch {batch_ix}', '#' * 20)
         for k, v in batch.items():
