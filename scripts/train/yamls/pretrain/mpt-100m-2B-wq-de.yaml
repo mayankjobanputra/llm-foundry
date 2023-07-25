@@ -114,8 +114,9 @@ loggers:
     entity: notsomonk
     project: thesis
     name: ${run_name}
-    id: 9k0dyvk8
-    resume: must
+    init_kwargs:
+      id: 9k0dyvk8
+      resume: must
 
 # Checkpoint to local filesystem or remote object store
 save_interval: 5000ba
