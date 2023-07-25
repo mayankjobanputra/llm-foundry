@@ -74,7 +74,7 @@ algorithms:
     clipping_type: norm
     clipping_threshold: 1.0
 
-max_duration: 1ep # ~ 2.0B tokens
+max_duration: 20000ba # ~ 2.0B tokens
 eval_interval: 2000ba
 eval_first: false
 eval_subset_num_batches: -1
@@ -114,9 +114,9 @@ loggers:
     entity: notsomonk
     project: thesis
     name: ${run_name}
-    init_kwargs:
-      id: 9k0dyvk8
-      resume: must
+#    init_kwargs:
+#      id: 9k0dyvk8
+#      resume: must
 
 allow_wandb_val_change: true
 
@@ -124,10 +124,10 @@ allow_wandb_val_change: true
 save_interval: 5000ba
 save_num_checkpoints_to_keep: 16  # Important, this cleans up checkpoints saved to DISK
 save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
-save_overwrite: true
+#save_overwrite: true
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
-autoresume: true
+#autoresume: true
 # Load from local filesystem or remote object store
 # load_path: ./gpt-125m/checkpoints/latest-rank{rank}.pt
 # load_path: s3://my-bucket/my-folder/gpt-125m/checkpoints/latest-rank{rank}.pt
