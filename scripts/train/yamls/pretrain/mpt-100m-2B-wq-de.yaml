@@ -121,6 +121,7 @@ save_num_checkpoints_to_keep: 16  # Important, this cleans up checkpoints saved 
 save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
+autoresume: true
 # Load from local filesystem or remote object store
 # load_path: ./gpt-125m/checkpoints/latest-rank{rank}.pt
 # load_path: s3://my-bucket/my-folder/gpt-125m/checkpoints/latest-rank{rank}.pt
