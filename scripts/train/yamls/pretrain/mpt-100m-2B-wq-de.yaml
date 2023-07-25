@@ -117,7 +117,8 @@ loggers:
     init_kwargs:
       id: 9k0dyvk8
       resume: must
-    allow_val_change: true
+
+allow_wandb_val_change: true
 
 # Checkpoint to local filesystem or remote object store
 save_interval: 5000ba
