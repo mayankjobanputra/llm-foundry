@@ -115,7 +115,7 @@ loggers:
     project: thesis
     name: ${run_name}
     init_kwargs:
-      id: 9k0dyvk8
+      id: hgt59ms5
       resume: must
 
 allow_wandb_val_change: true
