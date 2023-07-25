@@ -59,4 +59,6 @@ def log_config(cfg: DictConfig):
         except ImportError as e:
             raise e
         if wandb.run:
-            wandb.config.update(om.to_container(cfg, resolve=True))
+            if 'allow_val_change' in cfg.loggers.wandb:
+                allow_val_change = cfg.loggers.wandb.allow_val_change
+            wandb.config.update(om.to_container(cfg, resolve=True), allow_val_change=allow_val_change)
