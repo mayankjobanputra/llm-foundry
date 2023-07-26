@@ -37,7 +37,7 @@ train_loader:
     max_seq_len: ${max_seq_len}
     shuffle_seed: ${global_seed}
     keep_zip: false
-    cache_limit: 450gb
+    cache_limit: 950gb
   drop_last: true
   num_workers: 8
 
@@ -74,7 +74,7 @@ algorithms:
     clipping_type: norm
     clipping_threshold: 1.0
 
-max_duration: 40000ba # ~ 2.0B tokens
+max_duration: 70000ba # ~ 2.0B tokens
 eval_interval: 2000ba
 eval_first: false
 eval_subset_num_batches: -1
