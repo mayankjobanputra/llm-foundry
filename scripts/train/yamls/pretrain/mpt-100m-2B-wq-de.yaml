@@ -121,7 +121,7 @@ loggers:
 allow_wandb_val_change: true
 
 # Checkpoint to local filesystem or remote object store
-save_interval: 5000ba
+save_interval: 2000ba
 save_num_checkpoints_to_keep: 16  # Important, this cleans up checkpoints saved to DISK
 save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
 #save_overwrite: true
