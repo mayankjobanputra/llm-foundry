@@ -1,4 +1,4 @@
-data_local: ${oc.env:SCRATCH}/oscar_en_mds_loader
+data_local: /dev/shm/mjobanputra/oscar_en_mds_loader
 data_remote: /mnt/lustre/meurers/mjobanputra60/oscar_en_mds
 max_seq_len: 2048
 global_seed: 17
@@ -37,7 +37,7 @@ train_loader:
     max_seq_len: ${max_seq_len}
     shuffle_seed: ${global_seed}
     keep_zip: false
-    cache_limit: 2tb
+    cache_limit: 950gb
   drop_last: true
   num_workers: 8
 
