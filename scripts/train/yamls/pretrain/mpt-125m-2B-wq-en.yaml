@@ -118,6 +118,7 @@ loggers:
       id: g697ew8n
       resume: must
 
+allow_wandb_val_change: true
 # Checkpoint to local filesystem or remote object store
 save_interval: 5000ba
 save_num_checkpoints_to_keep: 16  # Important, this cleans up checkpoints saved to DISK
