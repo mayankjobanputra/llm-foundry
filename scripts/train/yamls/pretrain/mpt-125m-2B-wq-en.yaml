@@ -37,7 +37,7 @@ train_loader:
     max_seq_len: ${max_seq_len}
     shuffle_seed: ${global_seed}
     keep_zip: false
-    cache_limit: 420gb
+    cache_limit: 2tb
   drop_last: true
   num_workers: 8
 
@@ -114,6 +114,9 @@ loggers:
     entity: notsomonk
     project: thesis
     name: ${run_name}
+    init_kwargs:
+      id: g697ew8n
+      resume: must
 
 # Checkpoint to local filesystem or remote object store
 save_interval: 5000ba
@@ -122,5 +125,5 @@ save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
 # Load from local filesystem or remote object store
-# load_path: ./gpt-125m/checkpoints/latest-rank{rank}.pt
+load_path: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints/latest-rank0.pt
 # load_path: s3://my-bucket/my-folder/gpt-125m/checkpoints/latest-rank{rank}.pt
