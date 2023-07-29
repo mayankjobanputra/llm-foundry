@@ -74,7 +74,7 @@ algorithms:
     clipping_type: norm
     clipping_threshold: 1.0
 
-max_duration: 125000ba # ~ 2.0B tokens
+max_duration: 180000ba # ~ 2.0B tokens
 eval_interval: 2000ba
 eval_first: false
 eval_subset_num_batches: -1
