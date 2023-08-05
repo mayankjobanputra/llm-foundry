@@ -82,7 +82,7 @@ global_train_batch_size: 512
 
 # System
 seed: ${global_seed}
-device_eval_batch_size: 128
+device_eval_batch_size: 64
 # device_train_microbatch_size: 16
 device_train_microbatch_size: auto
 precision: amp_bf16
@@ -128,5 +128,5 @@ save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
 
 #autoresume: true
 # Load from local filesystem or remote object store
-#load_path: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints/latest-rank0.pt
+load_path: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints/latest-rank0.pt
 # load_path: s3://my-bucket/my-folder/gpt-125m/checkpoints/latest-rank{rank}.pt
