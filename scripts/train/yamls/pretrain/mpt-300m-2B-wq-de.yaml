@@ -116,7 +116,7 @@ loggers:
     name: ${run_name}
     init_kwargs:
       id: de300mwq
-      resume: allow
+      resume: must
 
 allow_wandb_val_change: true
 # Checkpoint to local filesystem or remote object store
