@@ -116,7 +116,7 @@ loggers:
     name: ${run_name}
     init_kwargs:
       id: en300mnonq2
-      resume: allow
+      resume: must
 
 allow_wandb_val_change: true
 # Checkpoint to local filesystem or remote object store
@@ -126,5 +126,5 @@ save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
 # Load from local filesystem or remote object store
-#load_path: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints/latest-rank0.pt
+load_path: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints/latest-rank0.pt
 # load_path: s3://my-bucket/my-folder/gpt-125m/checkpoints/latest-rank{rank}.pt
