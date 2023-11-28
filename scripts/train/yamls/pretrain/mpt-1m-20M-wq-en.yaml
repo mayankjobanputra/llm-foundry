@@ -10,9 +10,9 @@ run_name: mpt-1m-20m-wq-en-triton-t # If left blank, will be read from env var $
 model:
   name: mpt_causal_lm
   init_device: meta
-  d_model: 384
+  d_model: 192
   n_heads: 8
-  n_layers: 8
+  n_layers: 12
   expansion_ratio: 4
   max_seq_len: ${max_seq_len}
   vocab_size: 20000
