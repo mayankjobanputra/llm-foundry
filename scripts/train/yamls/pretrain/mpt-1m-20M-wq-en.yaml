@@ -75,14 +75,14 @@ algorithms:
     clipping_threshold: 1.0
 
 max_duration: 1ep # ~ 2.0B tokens
-eval_interval: 2000ba
+eval_interval: 500ba
 eval_first: false
 eval_subset_num_batches: -1
 global_train_batch_size: 512
 
 # System
 seed: ${global_seed}
-device_eval_batch_size: auto
+device_eval_batch_size: 64
 # device_train_microbatch_size: 16
 device_train_microbatch_size: auto
 precision: amp_bf16
@@ -115,16 +115,16 @@ loggers:
     project: thesis
     name: ${run_name}
     init_kwargs:
-      id: g697ew8n
-      resume: must
+      id: en1mnwq-t
+      resume: allow
 
 allow_wandb_val_change: true
 # Checkpoint to local filesystem or remote object store
-save_interval: 5000ba
+save_interval: 1000ba
 save_num_checkpoints_to_keep: 16  # Important, this cleans up checkpoints saved to DISK
-save_folder: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints
+save_folder: /home/mayank/models/${run_name}/checkpoints
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
 # Load from local filesystem or remote object store
-load_path: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints/latest-rank0.pt
+#load_path: /mnt/lustre/meurers/mjobanputra60/models/${run_name}/checkpoints/latest-rank0.pt
 # load_path: s3://my-bucket/my-folder/gpt-125m/checkpoints/latest-rank{rank}.pt
