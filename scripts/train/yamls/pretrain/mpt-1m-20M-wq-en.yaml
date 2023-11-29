@@ -4,7 +4,7 @@ max_seq_len: 2048
 global_seed: 17
 
 # Run Name
-run_name: mpt-1m-20m-wq-en-triton-t # If left blank, will be read from env var $RUN_NAME
+run_name: mpt-1m-20m-wq-en-triton # If left blank, will be read from env var $RUN_NAME
 
 # Model
 model:
@@ -76,7 +76,7 @@ algorithms:
 
 max_duration: 1ep # ~ 2.0B tokens
 eval_interval: 200ba
-eval_first: true
+eval_first: false
 eval_subset_num_batches: -1
 global_train_batch_size: 512
 
