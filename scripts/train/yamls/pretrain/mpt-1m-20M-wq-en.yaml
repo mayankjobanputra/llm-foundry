@@ -115,7 +115,7 @@ loggers:
     project: thesis
     name: ${run_name}
     init_kwargs:
-      id: en1mnwq-t
+      id: en1mnwq
       resume: allow
 
 allow_wandb_val_change: true
