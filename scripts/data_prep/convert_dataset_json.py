@@ -12,7 +12,8 @@ import datasets as hf_datasets
 from streaming import MDSWriter
 from torch.utils.data import DataLoader, IterableDataset
 from tqdm import tqdm
-from transformers import AutoTokenizer, PreTrainedTokenizerBase
+from tokenizers import Tokenizer
+from transformers import AutoTokenizer, PreTrainedTokenizerBase, PreTrainedTokenizerFast
 
 from llmfoundry.data import ConcatTokensDataset, NoConcatDataset
 
@@ -173,7 +174,8 @@ def main(args: Namespace) -> None:
     """
     if args.concat_tokens is not None:
         mode = ConcatMode.CONCAT_TOKENS
-        tokenizer = AutoTokenizer.from_pretrained(args.tokenizer)
+        tokenizer = Tokenizer.from_file(args.tokenizer)
+        tokenizer = PreTrainedTokenizerFast(tokenizer_object=tokenizer)
         # we will enforce length, so suppress warnings about sequences too long for the model
         tokenizer.model_max_length = int(1e30)
         columns = {'tokens': 'bytes'}

@@ -1,16 +1,16 @@
-data_local: /home/monk/data/oscar_en_small_mds_loader
-data_remote: /home/monk/data/oscar_en_small_mds
+data_local: /home/monk/data/oscar_en_nonq_small_mds_loader
+data_remote: /home/monk/data/oscar_en_nonq_small_mds
 max_seq_len: 2048
 global_seed: 17
 
 # Run Name
-run_name: mpt-1m-20m-wq-en-triton # If left blank, will be read from env var $RUN_NAME
+run_name: mpt-3m-20m-nonq-en-triton # If left blank, will be read from env var $RUN_NAME
 
 # Model
 model:
   name: mpt_causal_lm
   init_device: meta
-  d_model: 192
+  d_model: 384
   n_heads: 8
   n_layers: 12
   expansion_ratio: 4
@@ -22,7 +22,7 @@ model:
 
 # Tokenizer
 tokenizer:
-  name: /home/monk/Projects/UT/wh_multilingual/models/tokenizers/small_en_vocab.json
+  name: /home/monk/Projects/UT/wh_multilingual/models/tokenizers/small_en_nonq_vocab.json
   kwargs:
     model_max_length: ${max_seq_len}
 
@@ -74,8 +74,8 @@ algorithms:
     clipping_type: norm
     clipping_threshold: 1.0
 
-max_duration: 1ep # ~ 2.0B tokens
-eval_interval: 200ba
+max_duration: 1ep # ~ 20M tokens
+eval_interval: 250ba
 eval_first: false
 eval_subset_num_batches: -1
 global_train_batch_size: 512
@@ -115,7 +115,7 @@ loggers:
     project: thesis
     name: ${run_name}
     init_kwargs:
-      id: en1mnwq-triton
+      id: en3mnnonq
       resume: allow
 
 allow_wandb_val_change: true

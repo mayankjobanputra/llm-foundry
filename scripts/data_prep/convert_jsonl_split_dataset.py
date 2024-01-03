@@ -97,12 +97,12 @@ class DatasetConstants:
 
 
 oscar_en_constants = DatasetConstants(
-    chars_per_sample=923185,  # Computed over validation set
+    chars_per_sample=4830,  # Computed over validation set
     chars_per_token=4  # OpenAI estimate
 )
 oscar_en_constants.splits['train'] = DataSplitConstants(hf_split='train',
                                                         folder_split='train',
-                                                        raw_samples=2445798,
+                                                        raw_samples=24773,
                                                         truncated_samples=None)
 oscar_en_constants.splits['train_small'] = DataSplitConstants(hf_split='train',
                                                               folder_split='train_small',
@@ -110,7 +110,7 @@ oscar_en_constants.splits['train_small'] = DataSplitConstants(hf_split='train',
                                                               truncated_samples=10000)
 oscar_en_constants.splits['val'] = DataSplitConstants(hf_split='val',
                                                       folder_split='val',
-                                                      raw_samples=30000,
+                                                      raw_samples=750,
                                                       truncated_samples=None)
 oscar_en_constants.splits['val_small'] = DataSplitConstants(hf_split='val',
                                                             folder_split='val_small',
